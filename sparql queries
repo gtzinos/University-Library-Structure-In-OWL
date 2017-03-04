@@ -1,0 +1,136 @@
+DOCUMENTATION SPARQL http://www.w3.org/TR/sparql11-query/
+
+
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ab: <http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#>
+
+
+ΕΜΦΑΝΙΣΗ ΟΛΩΝ ΤΩΝ ΔΑΝΕΙΣΜΩΝ ΠΟΥ ΕΠΙΣΤΡΑΦΗΚΑΝ ΣΤΗΝ ΒΙΒΛΙΟΘΗΚΗ ΜΕ ΤΑΞΙΝΟΜΗΣΗ ΗΜΕΡΟΜΗΝΙΑΣ ΠΑΡΑΔΟΣΗΣ ΑΠΟ ΤΟΥΣ ΝΕΟΤΕΡΕΣ ΕΠΙΣΤΡΟΦΕΣ ΠΡΟΣ ΤΙΣ ΠΑΛΑΙΟΤΕΡΕΣ
+select (str(?title)as ?titlos) (str(?barcode)as?isbn) (str(?version)as?ekdosi) (str(?language)as?glwsa) (str(?copies)as?antitypa) (str(?publish_date)as?hmerominia_ekdosis) (str(?date)as?hmerominia_daneismou) (str(?ep_date) as ?imera_epistrofis) 
+where { ?id rdf:type ab:Daneismos ;
+			ab:lented_resourse ?res;
+			ab:transaction_date ?date.
+			{ select ?id ?ep_date
+				where {
+					?epistrofi rdf:type ab:Epistrofi;
+					 ab:transaction_date ?ep_date;
+					 ab:from_daneismos ?id
+				}      
+			}
+			{ select ?res ?barcode ?version ?publish_date ?copies ?language ?title
+				where {
+					?res rdf:type ab:Entypo;
+					 ab:barcode ?barcode;
+					 ab:version ?version;
+					 ab:publish_date ?publish_date;
+					 ab:copies ?copies;
+					 ab:language ?language;
+						ab:title ?title; 
+				}
+			}
+		}
+ORDER BY DESC(?imera_epistrofis)
+
+
+ΕΜΦΑΝΙΣΗ ΤΩΝ RESOURCES ΠΟΥ ΔΑΝΕΙΣΤΗΚΑΝ ΠΕΡΙΣΣΟΤΕΡΕΣ ΑΠΟ 2 ΦΟΡΕΣ ΤΑΞΙΝΟΜΗΜΕΝΑ ΑΠΟ ΤΟΝ ΜΕΓΑΛΥΤΕΡΟ ΣΤΟ ΜΙΚΡΟΤΕΡΟ
+select (str(?title) as ?titlos) (str(count(?resource)) as ?fores) (str(?barcode) as ?isbn) (str(?version) as ?ekdosi) (str(?language) as ?glwssa) (str(?copies) as ?antigrafa) (str(?publish_date) as ?mera_dimosieushs)
+where { ?id rdf:type ab:Daneismos ;
+                   ab:transaction_date ?date;
+                   ab:lented_resourse ?resource.
+{ select ?resource ?barcode ?version ?publish_date ?copies ?language ?title
+             where {
+ ?resource rdf:type ab:Entypo;
+ ab:barcode ?barcode;
+ ab:version ?version;
+ ab:publish_date ?publish_date;
+ ab:copies ?copies;
+ ab:language ?language;
+ ab:title ?title. }
+}
+}
+GROUP BY ?resource ?title ?barcode ?version ?publish_date ?copies ?language
+HAVING ((count(?resource)) >= 2)
+ORDER BY DESC((count(?resource))) LIMIT 10
+
+ΕΜΦΑΝΙΣΗ ΟΛΩΝ ΤΩΝ ΑΝΘΡΩΠΩΝ ΠΟΥ ΕΙΝΑΙ ΕΙΤΕ USER ΕΙΤΕ ΣΥΓΓΡΑΦΕΙΣ ΚΑΙ ΤΟ ΟΝΟΜΑ ΤΟΥΣ ΞΕΚΙΝΑΕΙ ΑΠΟ A 'H M ΧΩΡΙΣ ΝΑ ΕΧΕΙ ΣΗΜΑΣΙΑ ΚΕΦΑΛΑΙΟ ΜΙΚΡΟ ΜΕ ΤΑΞΙΝΟΜΗΣΗ ΗΛΙΚΙΑΚΑ ΑΠΟ ΤΟΝ ΜΕΓΑΛΥΤΕΡΟ ΣΤΟΝ ΜΙΚΡΟΤΕΡΟ
+
+select ?name ?surname ?Birthday
+where { ?id rdf:type ?type ;
+                   ab:name ?name;
+                   ab:surname ?surname; 
+                   ab:birth_date ?Birthday.
+                   FILTER(regex(?name, "^g", "i") || regex(?name, "^m", "i"))
+                   FILTER(?type IN (ab:User,ab:Syggrafeas))
+}
+ORDER BY ?Birthday
+
+select ?name ?surname ?Birthday
+where { ?id ab:name ?name;
+                   ab:surname ?surname;
+                   ab:birth_date ?Birthday.
+                   {?id rdf:type ab:User}
+                   UNION
+                   {?id rdf:type ab:Syggrafeas}
+                   FILTER(regex(?name, "^g", "i") || regex(?name, "^m", "i"))
+}
+ORDER BY ?Birthday
+
+
+
+diathesimothta twn vivliwn
+
+select ?entipo (str(?title)as ?titlos) (str(?barcode)as?isbn) (str(?version)as?ekdosi) (str(?language)as?glwsa) (str(?copies)as?antitypa) (str(?lented) as ?danismena) ((str(?copies-?lented)) as ?diathesima) (str(?publish_date)as?hmerominia_ekdosis)
+	where {
+		?entipo rdf:type ab:Entypo;
+		ab:barcode ?barcode;
+		ab:version ?version;
+		ab:publish_date ?publish_date;
+		ab:copies ?copies;
+		ab:language ?language;
+		ab:title ?title.	
+		{ select ?entipo (count(?daneismos) as ?lented)
+			where { ?daneismos rdf:type ab:Daneismos;
+	              			ab:lented_resourse ?entipo.
+			}
+			GROUP BY ?entipo	
+		}
+	}
+	
+	
+reserved resources poion exoun prwto poy tha ta paralavei
+
+
+
+
+ΟΙ ΤΙΤΛΟΙ ΤΩΝ ΥΛΙΚΩΝ ΠΟΥ ΔΕ ΕΙΝΑΙ ΓΡΑΜΜΕΝΑ ΣΤΑ ΕΛΛΗΝΙΚΑ
+
+ select ?title ?language ?barcode ?date ?version
+where { 
+	?entipo ab:title ?title
+	MINUS {
+		?entipo ab:language "Ellinika"^^xsd:string.
+	}
+	
+}
+
+ΤΑ ΒΙΒΛΙΑ ΤΑ ΟΠΟΙΑ ΔΕ ΕΧΟΥΝ ΠΡΟΚΥΨΕΙ ΑΠΟ ΚΡΑΤΗΣΗ
+
+select ?res (str(?date) as ?imera_daneismoy)
+where { 			?id rdf:type ab:Daneismos ;
+			ab:lented_resourse ?res;
+			ab:transaction_date ?date.
+			FILTER NOT EXISTS { ?id ab:from_kratisi ?val }
+}
+
+select ?res (str(?date) as ?imera_daneismoy)
+where { 			?id rdf:type ab:Daneismos ;
+			ab:lented_resourse ?res;
+			ab:transaction_date ?date.
+			OPTIONAL { ?id ab:from_kratisi ?kratisi }
+			FILTER(!BOUND(?kratisi))
+}

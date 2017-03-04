@@ -1,0 +1,1722 @@
+@prefix : <http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38> .
+
+<http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#authored
+
+:authored rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :Syggrafeas ;
+          
+          rdfs:range :Yliko .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#belongs_to
+
+:belongs_to rdf:type owl:ObjectProperty ;
+            
+            rdfs:range :Thematiki_katigoria ;
+            
+            rdfs:domain :Yliko .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#contains
+
+:contains rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :Thematiki_katigoria ;
+          
+          rdfs:range :Yliko ;
+          
+          owl:inverseOf :belongs_to .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#from_daneismos
+
+:from_daneismos rdf:type owl:ObjectProperty ;
+                
+                rdfs:range :Daneismos ;
+                
+                rdfs:domain :Epistrofi .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#from_kratisi
+
+:from_kratisi rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain :Daneismos ;
+              
+              rdfs:range :Kratisi .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#lented_resourse
+
+:lented_resourse rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain :Daneismos ;
+                 
+                 rdfs:range :Entypo .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#lenting_user
+
+:lenting_user rdf:type owl:ObjectProperty ;
+              
+              rdfs:domain :Daneismos ;
+              
+              rdfs:range :User .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#published
+
+:published rdf:type owl:ObjectProperty ;
+           
+           rdfs:domain :Ekdotikos_oikos ;
+           
+           rdfs:range :Yliko ;
+           
+           owl:inverseOf :was_published_by .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#registered_from
+
+:registered_from rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:domain :Synallagi ;
+                 
+                 rdfs:range :Ypallilos .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#registers
+
+:registers rdf:type owl:ObjectProperty ;
+           
+           rdfs:range :Synallagi ;
+           
+           rdfs:domain :Ypallilos ;
+           
+           owl:inverseOf :registered_from .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#reserved_resourse
+
+:reserved_resourse rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:range :Entypo ;
+                   
+                   rdfs:domain :Kratisi .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#reserving_user
+
+:reserving_user rdf:type owl:ObjectProperty ;
+                
+                rdfs:domain :Kratisi ;
+                
+                rdfs:range :User .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#was_authored_by
+
+:was_authored_by rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:range :Syggrafeas ;
+                 
+                 rdfs:domain :Yliko ;
+                 
+                 owl:inverseOf :authored .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#was_published_by
+
+:was_published_by rdf:type owl:ObjectProperty ;
+                  
+                  rdfs:range :Ekdotikos_oikos ;
+                  
+                  rdfs:domain :Yliko .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#address
+
+:address rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :Ekdotikos_oikos ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#am
+
+:am rdf:type owl:DatatypeProperty ;
+    
+    rdfs:domain :User ;
+    
+    rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#barcode
+
+:barcode rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :Entypo ;
+         
+         rdfs:range xsd:long .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#birth_date
+
+:birth_date rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :Anthropos ;
+            
+            rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#copies
+
+:copies rdf:type owl:DatatypeProperty ;
+        
+        rdfs:domain :Entypo ;
+        
+        rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#department
+
+:department rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :User ;
+            
+            rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#eidikotita
+
+:eidikotita rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :Iatriki ;
+            
+            rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#email
+
+:email rdf:type owl:DatatypeProperty ;
+       
+       rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#epistimonikos_klados
+
+:epistimonikos_klados rdf:type owl:DatatypeProperty ;
+                      
+                      rdfs:domain :Epistimi ;
+                      
+                      rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#fax
+
+:fax rdf:type owl:DatatypeProperty ;
+     
+     rdfs:domain :Ekdotikos_oikos ;
+     
+     rdfs:range xsd:long .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#gender
+
+:gender rdf:type owl:DatatypeProperty ;
+        
+        rdfs:domain :Anthropos ;
+        
+        rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#geographiki_perioxi
+
+:geographiki_perioxi rdf:type owl:DatatypeProperty ;
+                     
+                     rdfs:domain :Istoria ;
+                     
+                     rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#language
+
+:language rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Yliko ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#logotexniko_eidos
+
+:logotexniko_eidos rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:domain :logotexnia ;
+                   
+                   rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#name
+
+:name rdf:type owl:DatatypeProperty ;
+      
+      rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#orio_epistrofis
+
+:orio_epistrofis rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:domain :Daneismos ;
+                 
+                 rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#phone
+
+:phone rdf:type owl:DatatypeProperty ;
+       
+       rdfs:range xsd:long .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#postal_code
+
+:postal_code rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Ekdotikos_oikos ;
+             
+             rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#publish_date
+
+:publish_date rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Yliko ;
+              
+              rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#surname
+
+:surname rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :Anthropos ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#title
+
+:title rdf:type owl:DatatypeProperty ;
+       
+       rdfs:domain :Yliko ;
+       
+       rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#transaction_date
+
+:transaction_date rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:domain :Synallagi ;
+                  
+                  rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#version
+
+:version rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :Entypo ;
+         
+         rdfs:range xsd:integer .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#website
+
+:website rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :Ekdotikos_oikos ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#xronologisi
+
+:xronologisi rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Istoria ;
+             
+             rdfs:range xsd:string .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Anthropos
+
+:Anthropos rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Daneismos
+
+:Daneismos rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Synallagi .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Ekdotikos_oikos
+
+:Ekdotikos_oikos rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Entypo
+
+:Entypo rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Yliko .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Epistimi
+
+:Epistimi rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Thematiki_katigoria .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Epistrofi
+
+:Epistrofi rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Synallagi .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Iatriki
+
+:Iatriki rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Thematiki_katigoria .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Istoria
+
+:Istoria rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Thematiki_katigoria .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Kratisi
+
+:Kratisi rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Synallagi .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Psifiako
+
+:Psifiako rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Yliko .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Syggrafeas
+
+:Syggrafeas rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Anthropos .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Synallagi
+
+:Synallagi rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Thematiki_katigoria
+
+:Thematiki_katigoria rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#User
+
+:User rdf:type owl:Class ;
+      
+      rdfs:subClassOf :Anthropos .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Yliko
+
+:Yliko rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Ypallilos
+
+:Ypallilos rdf:type owl:Class ;
+           
+           rdfs:subClassOf :Anthropos .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#logotexnia
+
+:logotexnia rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Thematiki_katigoria .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#Rosili
+
+:Rosili rdf:type :Ekdotikos_oikos ,
+                 owl:NamedIndividual ;
+        
+        :phone "0263629925"^^xsd:long ;
+        
+        :fax "2990885238"^^xsd:long ;
+        
+        :postal_code 54852 ;
+        
+        :name "Rosili"^^xsd:string ;
+        
+        :email "rosili@netmail.com"^^xsd:string ;
+        
+        :website "www.rosili.com"^^xsd:string ;
+        
+        :address "Εθνικής Αντιστάσεως 6, Γέρακας"^^xsd:string ;
+        
+        :published :eisagwgi_sta_unix .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#adamidis
+
+:adamidis rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#aksiomakarou
+
+:aksiomakarou rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#aps
+
+:aps rdf:type :Ekdotikos_oikos ,
+              owl:NamedIndividual ;
+     
+     :address "-"^^xsd:string ;
+     
+     :fax "0931335035"^^xsd:long ;
+     
+     :postal_code 85245 ;
+     
+     :phone "9249723683"^^xsd:long ;
+     
+     :name "APS"^^xsd:string ;
+     
+     :email "aps@netmail.com"^^xsd:string ;
+     
+     :website "www.aps.com"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#arampatzis
+
+:arampatzis rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#astronomia
+
+:astronomia rdf:type :Epistimi ,
+                     owl:NamedIndividual ;
+            
+            :epistimonikos_klados "Astronomia"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#biologia
+
+:biologia rdf:type :Epistimi ,
+                   owl:NamedIndividual ;
+          
+          :epistimonikos_klados "Biologia"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#boggia
+
+:boggia rdf:type :Syggrafeas ,
+                 owl:NamedIndividual ;
+        
+        :birth_date "1974-08-01"^^xsd:string ;
+        
+        :phone "7868936940"^^xsd:long ;
+        
+        :surname "Boggia"^^xsd:string ;
+        
+        :name "Gennaro"^^xsd:string ;
+        
+        :email "boggia@netmail.com"^^xsd:string ;
+        
+        :gender "male"^^xsd:string ;
+        
+        :authored :on_accurate_simulations_of_LTE_femtocells ,
+                  :simulatingL_LTE_cellular_systems .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#camarda
+
+:camarda rdf:type :Syggrafeas ,
+                  owl:NamedIndividual ;
+         
+         :birth_date "1974-08-21"^^xsd:string ;
+         
+         :phone "9686669953"^^xsd:long ;
+         
+         :surname "Camarda"^^xsd:string ;
+         
+         :name "Vasilis"^^xsd:string ;
+         
+         :email "camarda@netmail.com"^^xsd:string ;
+         
+         :gender "male"^^xsd:string ;
+         
+         :authored :on_accurate_simulations_of_LTE_femtocells ,
+                   :simulatingL_LTE_cellular_systems .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#capozzi
+
+:capozzi rdf:type :Syggrafeas ,
+                  owl:NamedIndividual ;
+         
+         :birth_date "1975-06-22"^^xsd:string ;
+         
+         :phone "8930572055"^^xsd:long ;
+         
+         :surname "Capozzi"^^xsd:string ;
+         
+         :name "Giorgos"^^xsd:string ;
+         
+         :email "capozzi@netmail.com"^^xsd:string ;
+         
+         :gender "male"^^xsd:string ;
+         
+         :authored :on_accurate_simulations_of_LTE_femtocells ,
+                   :simulatingL_LTE_cellular_systems .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#comer
+
+:comer rdf:type :Syggrafeas ,
+                owl:NamedIndividual ;
+       
+       :birth_date "1975-10-21"^^xsd:string ;
+       
+       :phone "2609486067"^^xsd:long ;
+       
+       :surname "Comer"^^xsd:string ;
+       
+       :name "Takis"^^xsd:string ;
+       
+       :email "comer@netmail.com"^^xsd:string ;
+       
+       :gender "male"^^xsd:string ;
+       
+       :authored :on_accurate_simulations_of_LTE_femtocells .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#d_1
+
+:d_1 rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#d_2
+
+:d_2 rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#d_3
+
+:d_3 rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#d_4
+
+:d_4 rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#da_1
+
+:da_1 rdf:type :Daneismos ,
+               owl:NamedIndividual ;
+      
+      :transaction_date "2015-01-01"^^xsd:string ;
+      
+      :orio_epistrofis "2015-12-22"^^xsd:string ;
+      
+      :registered_from :garoufalou ;
+      
+      :lenting_user :kleftouris ;
+      
+      :lented_resourse :texniti_noimosyni .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#da_2
+
+:da_2 rdf:type :Daneismos ,
+               owl:NamedIndividual ;
+      
+      :orio_epistrofis "2014-12-24"^^xsd:string ;
+      
+      :transaction_date "2015-12-22"^^xsd:string ;
+      
+      :lenting_user :dimakis ;
+      
+      :lented_resourse :eisagwgi_sta_unix ;
+      
+      :registered_from :garoufalou .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#da_3
+
+:da_3 rdf:type :Daneismos ,
+               owl:NamedIndividual ;
+      
+      :transaction_date "2015-12-23"^^xsd:string ;
+      
+      :orio_epistrofis "2015-12-31"^^xsd:string ;
+      
+      :lented_resourse :eisagwgi_sta_unix ;
+      
+      :registered_from :garoufalou ;
+      
+      :lenting_user :kleftouris .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#da_4
+
+:da_4 rdf:type :Daneismos ,
+               owl:NamedIndividual ;
+      
+      :transaction_date "2015-12-24"^^xsd:string ;
+      
+      :orio_epistrofis "2015-12-27"^^xsd:string ;
+      
+      :lenting_user :dimakis ;
+      
+      :lented_resourse :eisagwgi_sta_unix ;
+      
+      :registered_from :zopidis .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#da_5
+
+:da_5 rdf:type :Daneismos ,
+               owl:NamedIndividual ;
+      
+      :transaction_date "2015-12-25"^^xsd:string ;
+      
+      :orio_epistrofis "2015-12-28"^^xsd:string ;
+      
+      :lenting_user :dimakis ;
+      
+      :lented_resourse :texniti_noimosyni ;
+      
+      :registered_from :zopidis .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#da_6
+
+:da_6 rdf:type :Daneismos ,
+               owl:NamedIndividual ;
+      
+      :transaction_date "2015-01-03"^^xsd:string ;
+      
+      :orio_epistrofis "2015-01-10"^^xsd:string ;
+      
+      :lenting_user :karapistoli ;
+      
+      :from_kratisi :kr_1 ;
+      
+      :lented_resourse :texniti_noimosyni ;
+      
+      :registered_from :zopidis .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#daneismos_1
+
+:daneismos_1 rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#dermatologia
+
+:dermatologia rdf:type :Iatriki ,
+                       owl:NamedIndividual ;
+              
+              :eidikotita "Dermatologia"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#dervos
+
+:dervos rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#diktia_ypologistwn
+
+:diktia_ypologistwn rdf:type :Entypo ,
+                             owl:NamedIndividual ;
+                    
+                    :publish_date "2006-07-24"^^xsd:string ;
+                    
+                    :version 3 ;
+                    
+                    :copies 3 ;
+                    
+                    :barcode "9343425176"^^xsd:long ;
+                    
+                    :title "Diktia ypologistwn"^^xsd:string ;
+                    
+                    :language "Ellinika"^^xsd:string ;
+                    
+                    :belongs_to :pliroforiki .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#dimakis
+
+:dimakis rdf:type :User ,
+                  owl:NamedIndividual ;
+         
+         :phone "0518475831"^^xsd:long ;
+         
+         :am 093625 ;
+         
+         :birth_date "1974-03-19"^^xsd:string ;
+         
+         :surname "Dimakis"^^xsd:string ;
+         
+         :name "Euthimios"^^xsd:string ;
+         
+         :department "Mousikis"^^xsd:string ;
+         
+         :email "dimakis@netmail.com"^^xsd:string ;
+         
+         :gender "male"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#eisagwgi_sta_unix
+
+:eisagwgi_sta_unix rdf:type :Entypo ,
+                            owl:NamedIndividual ;
+                   
+                   :publish_date "2007-02-02"^^xsd:string ;
+                   
+                   :copies 6 ;
+                   
+                   :version 6 ;
+                   
+                   :barcode "6249196358"^^xsd:long ;
+                   
+                   :title "Eisagwgi sta unix"^^xsd:string ;
+                   
+                   :language "Ellinika"^^xsd:string ;
+                   
+                   :belongs_to :pliroforiki .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#emeral
+
+:emeral rdf:type :Ekdotikos_oikos ,
+                 owl:NamedIndividual ;
+        
+        :address "-"^^xsd:string ;
+        
+        :phone "7373887372"^^xsd:long ;
+        
+        :fax "7621077584"^^xsd:long ;
+        
+        :postal_code 78985 ;
+        
+        :name "Emeral"^^xsd:string ;
+        
+        :email "emeral@netmail.com"^^xsd:string ;
+        
+        :website "www.emeral.com"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#ep_1
+
+:ep_1 rdf:type :Epistrofi ,
+               owl:NamedIndividual ;
+      
+      :transaction_date "2015-01-15"^^xsd:string ;
+      
+      :from_daneismos :da_1 ;
+      
+      :registered_from :garoufalou .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#ep_2
+
+:ep_2 rdf:type :Epistrofi ,
+               owl:NamedIndividual ;
+      
+      :transaction_date "2015-12-26"^^xsd:string ;
+      
+      :from_daneismos :da_2 ;
+      
+      :registered_from :narliotis .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#ep_3
+
+:ep_3 rdf:type :Epistrofi ,
+               owl:NamedIndividual ;
+      
+      :transaction_date "2015-01-12"^^xsd:string ;
+      
+      :from_daneismos :da_6 ;
+      
+      :registered_from :zopidis .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#garoufalou
+
+:garoufalou rdf:type :Ypallilos ,
+                     owl:NamedIndividual ;
+            
+            :birth_date "1984-09-28"^^xsd:string ;
+            
+            :phone "9707593488"^^xsd:long ;
+            
+            :surname "Garoufalou"^^xsd:string ;
+            
+            :name "Lia"^^xsd:string ;
+            
+            :gender "female"^^xsd:string ;
+            
+            :email "garoufalou@netmail.com"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#goulianas
+
+:goulianas rdf:type :User ,
+                    owl:NamedIndividual ;
+           
+           :am 102536 ;
+           
+           :birth_date "1979-12-03"^^xsd:string ;
+           
+           :phone "2769241200"^^xsd:long ;
+           
+           :surname "Goulianas"^^xsd:string ;
+           
+           :name "Konstantinos"^^xsd:string ;
+           
+           :department "Plirpforikis"^^xsd:string ;
+           
+           :email "gouliana@netmail.com"^^xsd:string ;
+           
+           :gender "male"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#hansen
+
+:hansen rdf:type :Syggrafeas ,
+                 owl:NamedIndividual ;
+        
+        :birth_date "1975-10-21"^^xsd:string ;
+        
+        :phone "3860499216"^^xsd:long ;
+        
+        :name "Hans"^^xsd:string ;
+        
+        :surname "Hansen"^^xsd:string ;
+        
+        :email "hansen@netmail.com"^^xsd:string ;
+        
+        :gender "male"^^xsd:string ;
+        
+        :authored :eisagwgi_sta_unix .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#ieee
+
+:ieee rdf:type :Ekdotikos_oikos ,
+               owl:NamedIndividual ;
+      
+      :address "-"^^xsd:string ;
+      
+      :fax "2683289151"^^xsd:long ;
+      
+      :postal_code 95212 ;
+      
+      :phone "9915322923"^^xsd:long ;
+      
+      :name "IEEE"^^xsd:string ;
+      
+      :email "ieee@netmail.com"^^xsd:string ;
+      
+      :website "www.ieee.com"^^xsd:string ;
+      
+      :published :on_accurate_simulations_of_LTE_femtocells .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#istoria_tis_anatolikis_europis
+
+:istoria_tis_anatolikis_europis rdf:type :Istoria ,
+                                         owl:NamedIndividual ;
+                                
+                                :geographiki_perioxi "Europi"^^xsd:string ;
+                                
+                                :xronologisi "Sygxrona xronia"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#istoria_tis_elladas
+
+:istoria_tis_elladas rdf:type :Istoria ,
+                              owl:NamedIndividual ;
+                     
+                     :xronologisi "Arxaia xronia"^^xsd:string ;
+                     
+                     :geographiki_perioxi "Ellada"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#k_1
+
+:k_1 rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#k_2
+
+:k_2 rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#k_3
+
+:k_3 rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#karapialis
+
+:karapialis rdf:type :User ,
+                     owl:NamedIndividual ;
+            
+            :am 123698 ;
+            
+            :phone "1486152471"^^xsd:long ;
+            
+            :birth_date "1979-12-18"^^xsd:string ;
+            
+            :department "Athlitikwn"^^xsd:string ;
+            
+            :surname "Karapialis"^^xsd:string ;
+            
+            :name "Lakis"^^xsd:string ;
+            
+            :email "karapialis"^^xsd:string ;
+            
+            :gender "male"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#karapistoli
+
+:karapistoli rdf:type :User ,
+                      owl:NamedIndividual ;
+             
+             :am 122546 ;
+             
+             :birth_date "1981-09-11"^^xsd:string ;
+             
+             :phone "7052787861"^^xsd:long ;
+             
+             :name "Eirini"^^xsd:string ;
+             
+             :surname "Karapistoli"^^xsd:string ;
+             
+             :department "Plirpforikis"^^xsd:string ;
+             
+             :gender "female"^^xsd:string ;
+             
+             :email "ikarapis@netmail.com"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#karaxatzis
+
+:karaxatzis rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#keramopoulos
+
+:keramopoulos rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#kleftouris
+
+:kleftouris rdf:type :User ,
+                     owl:NamedIndividual ;
+            
+            :am 124578 ;
+            
+            :birth_date "1982-03-02"^^xsd:string ;
+            
+            :phone "3065789353"^^xsd:long ;
+            
+            :surname "Kleftouris"^^xsd:string ;
+            
+            :name "Mixalis"^^xsd:string ;
+            
+            :department "Plirpforikis"^^xsd:string ;
+            
+            :email "klefturi@netmail.com"^^xsd:string ;
+            
+            :gender "male"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#kleidarithmos
+
+:kleidarithmos rdf:type :Ekdotikos_oikos ,
+                        owl:NamedIndividual ;
+               
+               :postal_code 12363 ;
+               
+               :fax "3750620020"^^xsd:long ;
+               
+               :phone "7868310708"^^xsd:long ;
+               
+               :name "Kleidarithmos"^^xsd:string ;
+               
+               :email "kleidararithmos@netmail.com"^^xsd:string ;
+               
+               :website "www.kleidarithmos.com"^^xsd:string ;
+               
+               :address """Στουρνάρη 27β
+10682 Αθήνα"""^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#kolompourdas
+
+:kolompourdas rdf:type :User ,
+                       owl:NamedIndividual ;
+              
+              :birth_date "1982-10-19"^^xsd:string ;
+              
+              :am 456587 ;
+              
+              :phone "8217763725"^^xsd:long ;
+              
+              :department "Athlitikwn"^^xsd:string ;
+              
+              :surname "Kolompourdas"^^xsd:string ;
+              
+              :name "Vasilis"^^xsd:string ;
+              
+              :email "kolompourdas@netmail.com"^^xsd:string ;
+              
+              :gender "male"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#koudas
+
+:koudas rdf:type :User ,
+                 owl:NamedIndividual ;
+        
+        :am 124578 ;
+        
+        :birth_date "1983-06-09"^^xsd:string ;
+        
+        :phone "2910237028"^^xsd:long ;
+        
+        :department "Athlitikwn"^^xsd:string ;
+        
+        :name "Giorgos"^^xsd:string ;
+        
+        :surname "Koudas"^^xsd:string ;
+        
+        :email "koudas@netmail.com"^^xsd:string ;
+        
+        :gender "male"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#kr_1
+
+:kr_1 rdf:type :Kratisi ,
+               owl:NamedIndividual ;
+      
+      :transaction_date "2015-01-02"^^xsd:string ;
+      
+      :reserving_user :karapistoli ;
+      
+      :reserved_resourse :texniti_noimosyni ;
+      
+      :registered_from :zopidis .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#krionas
+
+:krionas rdf:type :User ,
+                  owl:NamedIndividual ;
+         
+         :birth_date "1983-11-16"^^xsd:string ;
+         
+         :phone "4919223076"^^xsd:long ;
+         
+         :am 583265 ;
+         
+         :surname "Krionas"^^xsd:string ;
+         
+         :department "Logistikis"^^xsd:string ;
+         
+         :name "Vaggelis"^^xsd:string ;
+         
+         :email "krionas@netmail.com"^^xsd:string ;
+         
+         :gender "male"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#lafore
+
+:lafore rdf:type :Syggrafeas ,
+                 owl:NamedIndividual ;
+        
+        :phone "0403177276"^^xsd:long ;
+        
+        :birth_date "1976-01-13"^^xsd:string ;
+        
+        :name "John"^^xsd:string ;
+        
+        :surname "Lafore"^^xsd:string ;
+        
+        :email "lafore@netmail.com"^^xsd:string ;
+        
+        :gender "male"^^xsd:string ;
+        
+        :authored :diktia_ypologistwn .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#mythistorima
+
+:mythistorima rdf:type :logotexnia ,
+                       owl:NamedIndividual ;
+              
+              :logotexniko_eidos "Mythistorima"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#narliotis
+
+:narliotis rdf:type :Ypallilos ,
+                    owl:NamedIndividual ;
+           
+           :phone "1727921645"^^xsd:long ;
+           
+           :birth_date "1984-10-31"^^xsd:string ;
+           
+           :surname "Narliotis"^^xsd:string ;
+           
+           :name "Nikos"^^xsd:string ;
+           
+           :gender "male"^^xsd:string ;
+           
+           :email "narliwtis@netmail.com"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#norvig
+
+:norvig rdf:type :Syggrafeas ,
+                 owl:NamedIndividual ;
+        
+        :birth_date "1978-08-21"^^xsd:string ;
+        
+        :phone "5685593954"^^xsd:long ;
+        
+        :name "Joe"^^xsd:string ;
+        
+        :surname "Norvig"^^xsd:string ;
+        
+        :gender "male"^^xsd:string ;
+        
+        :email "norvig@netmail.com"^^xsd:string ;
+        
+        :authored :diktia_ypologistwn .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#nosileytiki
+
+:nosileytiki rdf:type :Iatriki ,
+                      owl:NamedIndividual ;
+             
+             :eidikotita "Nosileutiki"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#nouvela
+
+:nouvela rdf:type :logotexnia ,
+                  owl:NamedIndividual ;
+         
+         :logotexniko_eidos "Nouvela"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#on_accurate_simulations_of_LTE_femtocells
+
+:on_accurate_simulations_of_LTE_femtocells rdf:type :Psifiako ,
+                                                    owl:NamedIndividual ;
+                                           
+                                           :publish_date "2009-08-24"^^xsd:string ;
+                                           
+                                           :language "Agglika"^^xsd:string ;
+                                           
+                                           :title "On accurate simulations of LTE femtocells"^^xsd:string ;
+                                           
+                                           :belongs_to :pliroforiki .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#pathologia
+
+:pathologia rdf:type :Iatriki ,
+                     owl:NamedIndividual ;
+            
+            :eidikotita "Pathologia"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#piro
+
+:piro rdf:type :Syggrafeas ,
+               owl:NamedIndividual ;
+      
+      :birth_date "1979-12-08"^^xsd:string ;
+      
+      :phone "3255425420"^^xsd:long ;
+      
+      :name "Jussepe"^^xsd:string ;
+      
+      :surname "Piro"^^xsd:string ;
+      
+      :gender "male"^^xsd:string ;
+      
+      :email "piro@netmail.com"^^xsd:string ;
+      
+      :authored :on_accurate_simulations_of_LTE_femtocells ,
+                :simulatingL_LTE_cellular_systems .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#pliroforiki
+
+:pliroforiki rdf:type :Epistimi ,
+                      owl:NamedIndividual ;
+             
+             :epistimonikos_klados "Pliroforiki"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#poiisi
+
+:poiisi rdf:type :logotexnia ,
+                 owl:NamedIndividual ;
+        
+        :logotexniko_eidos "Poiisi"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#prokopidou
+
+:prokopidou rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#raptis
+
+:raptis rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#salampasis
+
+:salampasis rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#sfetsos
+
+:sfetsos rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#simulatingL_LTE_cellular_systems
+
+:simulatingL_LTE_cellular_systems rdf:type :Psifiako ,
+                                           owl:NamedIndividual ;
+                                  
+                                  :publish_date "2009-12-30"^^xsd:string ;
+                                  
+                                  :language "Agglika"^^xsd:string ;
+                                  
+                                  :title "Simulating LTE celular systems"^^xsd:string ;
+                                  
+                                  :belongs_to :pliroforiki .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#springer
+
+:springer rdf:type :Ekdotikos_oikos ,
+                   owl:NamedIndividual ;
+          
+          :address "-"^^xsd:string ;
+          
+          :postal_code 54652 ;
+          
+          :fax "8553155095"^^xsd:long ;
+          
+          :phone "9419050645"^^xsd:long ;
+          
+          :name "Spiringer"^^xsd:string ;
+          
+          :email "springer@netmail.com"^^xsd:string ;
+          
+          :website "www.springer.com"^^xsd:string ;
+          
+          :published :simulatingL_LTE_cellular_systems .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#stallings
+
+:stallings rdf:type :Syggrafeas ,
+                    owl:NamedIndividual ;
+           
+           :phone "0997798721"^^xsd:long ;
+           
+           :birth_date "1980-03-21"^^xsd:string ;
+           
+           :surname "Stallings"^^xsd:string ;
+           
+           :name "William"^^xsd:string ;
+           
+           :gender "male"^^xsd:string ;
+           
+           :email "stallings@netmail.com"^^xsd:string ;
+           
+           :authored :texniti_noimosyni .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#stamatis
+
+:stamatis rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#texniti_noimosyni
+
+:texniti_noimosyni rdf:type :Entypo ,
+                            owl:NamedIndividual ;
+                   
+                   :barcode "0328310889"^^xsd:long ;
+                   
+                   :version 10 ;
+                   
+                   :publish_date "2007-04-06"^^xsd:string ;
+                   
+                   :copies 7 ;
+                   
+                   :language "Ellinika"^^xsd:string ;
+                   
+                   :title "Texniti noimosyni"^^xsd:string ;
+                   
+                   :belongs_to :pliroforiki .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#tsiokas
+
+:tsiokas rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#tzinos
+
+:tzinos rdf:type owl:NamedIndividual ;
+        
+        :name "george" .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#tziolas
+
+:tziolas rdf:type :Ekdotikos_oikos ,
+                  owl:NamedIndividual ;
+         
+         :phone "5443065644"^^xsd:long ;
+         
+         :fax "8546819751"^^xsd:long ;
+         
+         :postal_code 89563 ;
+         
+         :name "Tziolas"^^xsd:string ;
+         
+         :email "tziolas@netmail.com"^^xsd:string ;
+         
+         :website "www.tziolas.com"^^xsd:string ;
+         
+         :address "Φιλίππου 91, Θεσσαλονίκη"^^xsd:string ;
+         
+         :published :texniti_noimosyni .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#vaskos
+
+:vaskos rdf:type owl:NamedIndividual ;
+        
+        :name "thanasis" .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#xatzakis
+
+:xatzakis rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#xatzara
+
+:xatzara rdf:type :User ,
+                  owl:NamedIndividual ;
+         
+         :birth_date "1984-03-13"^^xsd:string ;
+         
+         :am 875421 ;
+         
+         :phone "9505502882"^^xsd:long ;
+         
+         :name "Konstantina"^^xsd:string ;
+         
+         :department "Logistikis"^^xsd:string ;
+         
+         :surname "Xatzara"^^xsd:string ;
+         
+         :gender "female"^^xsd:string ;
+         
+         :email "xatzara@netmail.com"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#xatzimisios
+
+:xatzimisios rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#zopidis
+
+:zopidis rdf:type :Ypallilos ,
+                  owl:NamedIndividual ;
+         
+         :birth_date "1984-11-20"^^xsd:string ;
+         
+         :phone "9704854039"^^xsd:long ;
+         
+         :name "Kostas"^^xsd:string ;
+         
+         :surname "Zopidis"^^xsd:string ;
+         
+         :gender "male"^^xsd:string ;
+         
+         :email "zopidis@netmail.com"^^xsd:string .
+
+
+
+###  http://www.semanticweb.org/thanos/ontologies/2015/11/untitled-ontology-38#zygos
+
+:zygos rdf:type :Ekdotikos_oikos ,
+                owl:NamedIndividual ;
+       
+       :phone "5182951039"^^xsd:long ;
+       
+       :postal_code 74145 ;
+       
+       :fax "7767333046"^^xsd:long ;
+       
+       :name "Zygos"^^xsd:string ;
+       
+       :website "www.zygos.com"^^xsd:string ;
+       
+       :email "zygos@netmail.com"^^xsd:string ;
+       
+       :address "Αγγελάκη 39,Θεσσαλονίκη"^^xsd:string ;
+       
+       :published :diktia_ypologistwn .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Daneismos
+                :Epistrofi
+                :Kratisi
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
